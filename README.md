@@ -141,7 +141,7 @@ Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 
 ## 👥 Auteurs
 
-- [Votre Nom] - _Développement initial_
+- JEDEON SAP LONTCHI - _Développeur web full-stack_
 
 ## 🙏 Remerciements
 
