@@ -38,6 +38,14 @@ const PLAYLIST = [
     url: "https://example.com/new-stream.mpd",
     live: false,
   },
+  
+  {
+    titre: "Drama (HLS)",
+    sousTitre: "Demo HLS - ShakaPlayer",
+    url: "https://storage.googleapis.com/shaka-demo-assets/angel-one-hls/hls.m3u8",
+    live: false,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Clap_cinema_film.svg/320px-Clap_cinema_film.svg.png",
+  },
 ];
 
 const VideoPlayer = ({ initialVideo }) => {
@@ -63,7 +71,6 @@ const VideoPlayer = ({ initialVideo }) => {
     return firstVodIndex !== -1 ? firstVodIndex : 0;
   });
 
-  
   const currentVideo = PLAYLIST[currentIndex];
   const isCurrentlyLive = currentVideo.live;
 
@@ -284,11 +291,21 @@ const VideoPlayer = ({ initialVideo }) => {
   const handleOpenPlaylist = () => setShowPlaylist(true);
   const handleClosePlaylist = () => setShowPlaylist(false);
 
+  const handleBack = () => {
+    // Nettoyer les ressources
+    if (playerRef.current) {
+      playerRef.current.destroy();
+    }
+    // Retourner à la page d'accueil
+    window.location.href = "/";
+  };
+
   return (
     <div className="lecteur-container">
       <PlayerHeader
         titre={currentVideo.titre}
         sousTitre={currentVideo.sousTitre}
+        onBack={handleBack}
       />
       <div className="lecteur-video-wrapper">
         <video

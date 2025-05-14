@@ -76,6 +76,22 @@ const PLAYLIST = [
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/320px-NASA_logo.svg.png",
   },
+  {
+    titre: "BBB 60fps",
+    sousTitre: "Version 60fps de Big Buck Bunny",
+    url: "https://bitmovin-a.akamaihd.net/content/bbb/manifest.mpd",
+    live: false,
+    imageUrl: "https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217",
+  },
+  {
+    titre: "Live CMAF Test",
+    sousTitre: "Flux live en format CMAF (DASH)",
+    url: "https://livesim.dashif.org/livesim/segtimeline_1/testpic_2s/Manifest.mpd",
+    live: true,
+    imageUrl: "https://i.imgur.com/MY1gEFg.jpeg",
+  },
+  
+  
 ];
 
 const HomePage = () => {
@@ -217,13 +233,10 @@ const HomePage = () => {
   if (isPlaying && currentVideo) {
     return (
       <div className="video-player-container">
-        <button className="back-button" onClick={handleClosePlayer}>
-          ← Retour à l'accueil
-        </button>
+        
         <VideoPlayer
           initialVideo={{
             titre: currentVideo.titre,
-            sousTitre: currentVideo.sousTitre,
             url: currentVideo.url,
             live: currentVideo.live,
           }}

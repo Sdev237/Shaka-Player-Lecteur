@@ -38,11 +38,24 @@ const Navigation = ({ onSearch }) => {
   return (
     <nav className={`navigation ${isScrolled ? "scrolled" : ""}`}>
       <div className="nav-left">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
-          alt="Logo"
-          className="nav-logo"
-        />
+        <div className="sap-logo">
+          <span className="sap-text">
+            <span className="letter">S</span>
+            <span className="letter">A</span>
+            <span className="letter">P</span>
+          </span>
+          <span className="streaming-text">
+            <span className="letter">S</span>
+            <span className="letter">t</span>
+            <span className="letter">r</span>
+            <span className="letter">e</span>
+            <span className="letter">a</span>
+            <span className="letter">m</span>
+            <span className="letter">i</span>
+            <span className="letter">n</span>
+            <span className="letter">g</span>
+          </span>
+        </div>
         <ul className="nav-links">
           <li>
             <a href="#accueil">Accueil</a>

@@ -9,11 +9,15 @@
   align-items: center;
   padding: 0 60px;
   z-index: 1000;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navigation.scrolled {
-  background-color: #141414;
+  background: rgba(0, 0, 0, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .nav-left {
@@ -22,9 +26,88 @@
   gap: 2rem;
 }
 
-.nav-logo {
-  height: 25px;
+.sap-logo {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.sap-text {
+  display: flex;
+  align-items: center;
+}
+
+.sap-text .letter {
+  color: #03daf7;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.sap-text .letter:nth-child(1) {
+  font-size: 2.5rem;
+}
+.sap-text .letter:nth-child(2) {
+  font-size: 2.2rem;
+}
+.sap-text .letter:nth-child(3) {
+  font-size: 2.1rem;
+}
+
+.streaming-text {
+  display: flex;
+  align-items: center;
+}
+
+.streaming-text .letter {
+  color: rgba(250, 4, 4, 0.7);
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.streaming-text .letter:nth-child(1) {
+  font-size: 2rem;
+}
+.streaming-text .letter:nth-child(2) {
+  font-size: 1.8rem;
+}
+.streaming-text .letter:nth-child(3) {
+  font-size: 1.5rem;
+}
+.streaming-text .letter:nth-child(4) {
+  font-size: 1.5rem;
+}
+.streaming-text .letter:nth-child(5) {
+  font-size: 1.6rem;
+}
+.streaming-text .letter:nth-child(6) {
+  font-size: 1.7rem;
+}
+.streaming-text .letter:nth-child(7) {
+  font-size: 1.8rem;
+}
+.streaming-text .letter:nth-child(8) {
+  font-size: 1.9rem;
+}
+.streaming-text .letter:nth-child(9) {
+  font-size: 2.4rem;
+}
+
+.sap-logo:hover {
+  transform: translateY(-1px);
+}
+
+.sap-logo:hover .sap-text .letter {
+  color: #ff3366;
+}
+
+.sap-logo:hover .streaming-text .letter {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .nav-links {
@@ -36,14 +119,35 @@
 }
 
 .nav-links a {
-  color: #e5e5e5;
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   font-size: 0.9rem;
-  transition: color 0.3s ease;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(45deg, #ff3366, #ff6b6b);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #b3b3b3;
+  color: #ffffff;
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .nav-right {
@@ -55,27 +159,28 @@
 .search-box {
   display: flex;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.75);
-  border: 1px solid #333;
-  border-radius: 4px;
-  padding: 0.3rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0.4rem;
   transition: all 0.3s ease;
 }
 
 .search-box.active {
-  background-color: rgba(0, 0, 0, 0.9);
-  border-color: #fff;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .search-box input {
   background: transparent;
   border: none;
   color: white;
-  padding: 0.3rem 0.5rem;
+  padding: 0.4rem 0.8rem;
   width: 200px;
   outline: none;
-  transition: width 0.3s ease;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
 }
 
 .search-box.active input {
@@ -83,19 +188,20 @@
 }
 
 .search-box input::placeholder {
-  color: #999;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .search-button {
   background: transparent;
   border: none;
-  color: white;
+  color: rgba(255, 255, 255, 0.7);
   cursor: pointer;
-  padding: 0.3rem;
-  transition: transform 0.3s ease;
+  padding: 0.4rem;
+  transition: all 0.3s ease;
 }
 
 .search-box.active .search-button {
+  color: #ffffff;
   transform: scale(1.1);
 }
 
@@ -107,23 +213,43 @@
 .profile-icon {
   width: 32px;
   height: 32px;
-  border-radius: 4px;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.profile-menu:hover .profile-icon {
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .profile-dropdown {
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.9);
-  border: 1px solid #333;
-  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
   padding: 0.5rem 0;
   min-width: 200px;
   display: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .profile-menu:hover .profile-dropdown {
   display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .profile-dropdown ul {
@@ -137,14 +263,16 @@
 }
 
 .profile-dropdown a {
-  color: #e5e5e5;
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   font-size: 0.9rem;
   display: block;
+  transition: all 0.3s ease;
 }
 
 .profile-dropdown a:hover {
-  color: white;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 /* Responsive Design */
