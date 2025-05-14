@@ -1,81 +1,150 @@
-# Lecteur Vidéo Web avec React & Shaka Player
+# Lecteur Vidéo React
 
-## Présentation
+Un lecteur vidéo moderne et performant développé avec React, offrant des fonctionnalités avancées de lecture et de gestion de contenu.
 
-Ce projet est un lecteur vidéo web moderne développé avec React, intégrant Shaka Player pour la lecture de vidéos DASH avec gestion du DRM (Widevine) et l'affichage de publicités. L'interface est inspirée des plateformes de streaming professionnelles, avec prise en charge du mode VOD (à la demande) et du mode Live (en direct).
+## 🚀 Fonctionnalités
 
-## Fonctionnalités principales
+- Lecture de vidéos VOD et en direct
+- Gestion de playlist
+- Contrôles de lecture avancés
+- Support des sous-titres
+- Sélection de la qualité vidéo
+- Sélection des pistes audio
+- Indicateur de statut en direct
+- Interface utilisateur moderne et responsive
 
-- **Lecture de vidéos DASH** (VOD et Live)
-- **Gestion du DRM** (exemple Widevine)
-- **Affichage de publicités** (Google IMA)
-- **Contrôles personnalisés** : avancer/reculer de 10 secondes
-- **Basculer entre VOD et Live** (bouton "Passer en direct")
-- **Indicateur "EN DIRECT"** pour le mode live
-- **Interface moderne et responsive**
-- **En-tête personnalisable** (titre et sous-titre dynamiques)
+## 📋 Prérequis
 
-## Technologies utilisées
+- Node.js (v14 ou supérieur)
+- npm (v6 ou supérieur)
+- Navigateur moderne (Chrome, Firefox, Safari, Edge)
 
-- [React](https://react.dev/) (18+)
-- [Shaka Player](https://github.com/shaka-project/shaka-player)
-- [Google IMA SDK](https://developers.google.com/interactive-media-ads/docs/sdks/html5/)
-- CSS (custom)
+## 🛠 Installation
 
-## Installation et lancement
+1. Clonez le dépôt :
 
-1. **Cloner le projet**
-   ```bash
-   git clone <url-du-repo>
-   cd lecteur-video-shaka
-   ```
-2. **Installer les dépendances**
-   ```bash
-   npm install
-   ```
-3. **Lancer l'application**
-   ```bash
-   npm start
-   ```
-4. Ouvrir [http://localhost:3000](http://localhost:3000) dans votre navigateur.
-
-## Structure du projet
-
-```
-lecteur-video-shaka/
-├── public/
-│   └── index.html
-├── src/
-│   ├── components/
-│   │   └── VideoPlayer.jsx
-│   │   └── VideoPlayer.css
-│   ├── App.jsx
-│   └── index.jsx
-├── package.json
-└── README.md
+```bash
+git clone [URL_DU_REPO]
+cd lecteur-player
 ```
 
-## Personnalisation
+2. Installez les dépendances :
 
-- **Changer le titre/sous-titre** :
-  ```jsx
-  <VideoPlayer titre="Nom du film" sousTitre="Bande-annonce" />
-  ```
-- **Changer les URLs VOD/Live** : modifier les constantes `VOD_URL` et `LIVE_URL` dans `VideoPlayer.jsx`.
+```bash
+npm install
+```
 
-## Perspectives d'amélioration
+3. Lancez l'application en mode développement :
 
-- **Support d'autres DRM** (PlayReady, FairPlay)
-- **Sélecteur de qualité vidéo (ABR)**
-- **Support des sous-titres et multi-audio**
-- **Gestion des playlists**
-- **Mode Picture-in-Picture**
-- **Mode plein écran natif amélioré**
-- **Personnalisation avancée des contrôles**
-- **Authentification utilisateur et gestion des droits**
-- **Analytics d'audience**
-- **Support HLS en plus du DASH**
+```bash
+npm start
+```
 
-## Auteur
+## 🧪 Tests
 
-Projet réalisé par [Votre Nom].
+Le projet utilise Jest et React Testing Library pour les tests unitaires.
+
+Pour exécuter les tests :
+
+```bash
+# Exécuter tous les tests
+npm test
+
+# Exécuter les tests avec couverture
+npm test -- --coverage
+
+# Exécuter les tests en mode watch
+npm test -- --watch
+```
+
+## 📁 Structure du Projet
+
+```
+src/
+├── components/
+│   ├── __tests__/          # Tests unitaires
+│   ├── Button.jsx          # Composant de bouton réutilisable
+│   ├── LiveIndicator.jsx   # Indicateur de statut en direct
+│   ├── PlaylistMenu.jsx    # Menu de gestion de playlist
+│   ├── PlayerControls.jsx  # Contrôles de lecture
+│   └── VideoPlayer.jsx     # Composant principal du lecteur
+```
+
+## 🎯 Composants Principaux
+
+### VideoPlayer
+
+Le composant principal qui gère la lecture vidéo et intègre tous les autres composants.
+
+### PlayerControls
+
+Gère les contrôles de lecture :
+
+- Avancer/Reculer
+- Basculement direct/VOD
+- Sélection de la qualité
+- Gestion des pistes audio
+- Gestion des sous-titres
+
+### PlaylistMenu
+
+Interface de gestion de la playlist avec :
+
+- Liste des vidéos
+- Sélection active
+- Navigation entre les vidéos
+
+### LiveIndicator
+
+Affiche le statut de lecture en direct :
+
+- Indicateur "EN DIRECT"
+- Indicateur de retard
+- Bouton de retour au direct
+
+## 🔧 Configuration
+
+### Variables d'Environnement
+
+Créez un fichier `.env` à la racine du projet :
+
+```env
+NODE_ENV=development
+REACT_APP_API_URL=http://localhost:3000
+```
+
+### Configuration TypeScript
+
+Le projet utilise TypeScript pour un développement plus robuste. La configuration est disponible dans `tsconfig.json`.
+
+## 📚 Documentation
+
+### Tests
+
+Les tests sont organisés par composant dans le dossier `__tests__`. Chaque composant a son propre fichier de test.
+
+### Style
+
+Le projet utilise des classes CSS modulaires avec le préfixe `lecteur-` pour éviter les conflits de style.
+
+## 🤝 Contribution
+
+1. Fork le projet
+2. Créez votre branche de fonctionnalité (`git checkout -b feature/AmazingFeature`)
+3. Committez vos changements (`git commit -m 'Add some AmazingFeature'`)
+4. Push vers la branche (`git push origin feature/AmazingFeature`)
+5. Ouvrez une Pull Request
+
+## 📝 Licence
+
+Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
+
+## 👥 Auteurs
+
+- [Votre Nom] - _Développement initial_
+
+## 🙏 Remerciements
+
+- [Shaka Player](https://github.com/google/shaka-player) pour la gestion de la lecture vidéo
+- [React Testing Library](https://testing-library.com/) pour les outils de test
+- [Jest](https://jestjs.io/) pour le framework de test
