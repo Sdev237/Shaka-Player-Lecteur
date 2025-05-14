@@ -1,0 +1,337 @@
+.lecteur-container {
+  width: 100%;
+  height: 100vh;
+  max-width: 100vw;
+  background-color: #000;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.lecteur-header {
+  padding: 16px;
+  flex-shrink: 0;
+}
+
+.lecteur-retour {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-right: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.lecteur-titre {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2px;
+  color: #ebe7e7;
+}
+
+.lecteur-sous-titre {
+  font-size: 1.1rem;
+  color: #bdbdbd;
+}
+
+.lecteur-video-wrapper {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+
+.lecteur-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #000;
+  outline: none;
+  border-radius: 8px;
+  box-sizing: border-box;
+  display: block;
+}
+
+.lecteur-boutons {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.8);
+  flex-shrink: 0;
+}
+
+.lecteur-bouton {
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.lecteur-bouton:hover {
+  background: #444;
+}
+
+.lecteur-live {
+  position: absolute;
+  top: 18px;
+  right: 32px;
+  background: #e53935;
+  color: #fff;
+  font-weight: bold;
+  padding: 4px 14px;
+  border-radius: 16px;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.lecteur-bouton-live {
+  background: #e53935;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 16px;
+  transition: background 0.2s;
+}
+.lecteur-bouton-live:hover {
+  background: #b71c1c;
+}
+
+.lecteur-select-qualite {
+  margin-left: 16px;
+  padding: 7px 12px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #181818;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+  transition: border 0.2s;
+}
+.lecteur-select-qualite:focus {
+  border: 1.5px solid #e53935;
+}
+
+.lecteur-boutons select {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .lecteur-container {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .lecteur-video-wrapper {
+    flex: 1;
+    min-height: 0;
+  }
+
+  .lecteur-boutons {
+    padding: 12px;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .lecteur-video {
+    max-width: 100vw;
+    max-height: 40vh;
+    border-radius: 6px;
+  }
+  .lecteur-playlist-popup {
+    right: 10px;
+    min-width: 220px;
+    padding: 18px 8px 8px 8px;
+  }
+  .lecteur-header {
+    padding: 16px 8px 8px 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .lecteur-container {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .lecteur-header {
+    padding: 8px;
+  }
+
+  .lecteur-video-wrapper {
+    flex: 1;
+    min-height: 0;
+  }
+
+  .lecteur-video {
+    max-width: 100vw;
+    max-height: 30vh;
+    border-radius: 4px;
+  }
+  .lecteur-titre {
+    font-size: 1.1rem;
+  }
+  .lecteur-sous-titre {
+    font-size: 0.85rem;
+  }
+  .lecteur-playlist-popup {
+    top: 60px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    min-width: unset;
+    width: 95vw;
+    border-radius: 8px;
+    padding: 10px 2px 2px 2px;
+  }
+  .lecteur-boutons {
+    padding: 8px;
+    gap: 6px;
+    flex-direction: column;
+  }
+  .lecteur-bouton,
+  .lecteur-bouton-live,
+  .lecteur-bouton-playlist,
+  .lecteur-select-qualite {
+    width: 100%;
+    margin: 4px 0;
+    font-size: 0.95rem;
+    padding: 8px;
+  }
+  .lecteur-playlist-item {
+    font-size: 0.95rem;
+    padding: 8px 8px;
+  }
+  .lecteur-bouton-live-retard {
+    right: 8px;
+    top: 48px;
+    font-size: 0.95rem;
+    padding: 6px 10px;
+  }
+}
+
+.lecteur-playlist {
+  display: flex;
+  gap: 12px;
+  margin: 24px 0 0 32px;
+  flex-wrap: wrap;
+}
+.lecteur-playlist-item {
+  background: #232323;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.lecteur-playlist-item.active,
+.lecteur-playlist-item:hover {
+  background: #e53935;
+  color: #fff;
+}
+
+.lecteur-live-retard {
+  background: #888 !important;
+  color: #fff !important;
+}
+.lecteur-bouton-live-retard {
+  position: absolute;
+  top: 60px;
+  right: 32px;
+  background: #e53935;
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  padding: 6px 18px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: background 0.2s;
+}
+.lecteur-bouton-live-retard:hover {
+  background: #b71c1c;
+}
+
+.lecteur-bouton-playlist {
+  background: #232323;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 16px;
+  transition: background 0.2s;
+}
+.lecteur-bouton-playlist:hover {
+  background: #e53935;
+}
+
+.lecteur-playlist-popup {
+  position: fixed;
+  top: 80px;
+  right: 40px;
+  background: #181818;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  min-width: 320px;
+  padding: 24px 18px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.lecteur-playlist-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: transparent;
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.lecteur-playlist-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+.lecteur-playlist-item {
+  background: #232323;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  text-align: left;
+}
+.lecteur-playlist-item.active,
+.lecteur-playlist-item:hover {
+  background: #e53935;
+  color: #fff;
+}

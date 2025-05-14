@@ -1,0 +1,40 @@
+.lecteur-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.lecteur-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.lecteur-button:active {
+  transform: scale(0.98);
+}
+
+.lecteur-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.lecteur-button-live {
+  background-color: #ff0000;
+}
+
+.lecteur-button-live:hover {
+  background-color: #cc0000;
+}
+
+.lecteur-button-playlist {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.lecteur-button-playlist:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}

@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #141414;
+  color: white;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* Styles globaux pour les boutons */
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+/* Styles pour les liens */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Styles pour les images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Styles pour les conteneurs */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Styles pour les transitions */
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-in;
+} 
