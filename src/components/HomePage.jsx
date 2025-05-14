@@ -170,7 +170,8 @@ const HomePage = () => {
 
   const handleCategoryChange = (category) => {
     setCurrentCategory(category);
-    setSearchResults(null); // Réinitialiser la recherche lors du changement de catégorie
+    // Réinitialiser la recherche lors du changement de catégorie
+    setSearchResults(null); 
 
     // Filtrer le contenu selon la catégorie
     let filteredContent;

@@ -63,7 +63,7 @@ const VideoPlayer = ({ initialVideo }) => {
     return firstVodIndex !== -1 ? firstVodIndex : 0;
   });
 
-  // Déplacer ces lignes ici, après currentIndex
+  
   const currentVideo = PLAYLIST[currentIndex];
   const isCurrentlyLive = currentVideo.live;
 
@@ -156,7 +156,6 @@ const VideoPlayer = ({ initialVideo }) => {
         videoRef.current.removeEventListener("timeupdate", handleLiveEdgeCheck);
       }
     };
-    // eslint-disable-next-line
   }, [currentIndex]);
 
   // Fonction pour vérifier si on est à la pointe du live
