@@ -38,7 +38,7 @@ const Navigation = ({ onSearch }) => {
   return (
     <nav className={`navigation ${isScrolled ? "scrolled" : ""}`}>
       <div className="nav-left">
-        <div className="sap-logo">
+        <div className="sap-logo" data-testid="sap-logo">
           <span className="sap-text">
             <span className="letter">S</span>
             <span className="letter">A</span>
@@ -88,7 +88,7 @@ const Navigation = ({ onSearch }) => {
         </div>
         <div className="profile-menu">
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
+            //src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
             alt="Profile"
             className="profile-icon"
           />

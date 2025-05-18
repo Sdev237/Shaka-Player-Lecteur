@@ -7,6 +7,7 @@ import LiveIndicator from "./LiveIndicator";
 import PlayerControls from "./PlayerControls";
 import PlaylistMenu from "./PlaylistMenu";
 
+// Playlist de vidéos
 const PLAYLIST = [
   {
     titre: "Live Test (DASH-IF)",
