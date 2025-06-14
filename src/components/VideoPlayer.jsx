@@ -216,7 +216,36 @@ const VideoPlayer = ({ initialVideo }) => {
       videoRef.current.currentTime -= 10;
     }
   };
- 
+  const handleQualityChange = (e) => {
+    const value = e.target.value;
+    setSelectedQuality(value);
+    if (playerRef.current) {
+      if (value === "auto") {
+        playerRef.current.configure({ abr: { enabled: true } });
+      } else {
+        playerRef.current.configure({ abr: { enabled: false } });
+        const track = qualities.find((q) => q.id.toString() === value);
+        if (track) {
+          playerRef.current.selectVariantTrack(track, /* clearBuffer= */ true);
+        }
+      }
+    }
+  };
+  const handleTextChange = (e) => {
+    const value = e.target.value;
+    setSelectedText(value);
+    if (playerRef.current) {
+      if (value === "off") {
+        playerRef.current.setTextTrackVisibility(false);
+      } else {
+        playerRef.current.setTextTrackVisibility(true);
+        const track = textTracks.find((t) => t.language === value);
+        if (track) {
+          playerRef.current.selectTextLanguage(track.language);
+        }
+      }
+    }
+  };
   const handleAudioChange = (e) => {
     const value = e.target.value;
     setSelectedAudio(value);
