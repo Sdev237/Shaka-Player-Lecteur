@@ -14,34 +14,7 @@ export default function PlayerHeader({ titre, sousTitre, onBack }) {
     return () => clearTimeout(initialTimeout);
   }, []); // S'exécute une seule fois au montage
 
-  useEffect(() => {
-    const handleMouseMove = () => {
-      setIsVisible(true);
-
-      // Réinitialiser le timeout à chaque mouvement de souris
-      if (mouseTimeout) {
-        clearTimeout(mouseTimeout);
-      }
-
-      // Définir un nouveau timeout pour cacher l'en-tête après 3 secondes
-      const timeout = setTimeout(() => {
-        setIsVisible(false);
-      }, 3000);
-
-      setMouseTimeout(timeout);
-    };
-
-    // Ajouter les écouteurs d'événements
-    document.addEventListener("mousemove", handleMouseMove);
-
-    // Nettoyer les écouteurs lors du démontage
-    return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-      if (mouseTimeout) {
-        clearTimeout(mouseTimeout);
-      }
-    };
-  }, [mouseTimeout]);
+  [mouseTimeout]);
 
   return (
     <div className={`lecteur-header ${isVisible ? "visible" : "hidden"}`}>
