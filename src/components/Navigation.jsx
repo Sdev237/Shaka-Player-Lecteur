@@ -19,7 +19,21 @@ const Navigation = ({ onSearch }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleSearchChange = (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+    onSearch(query);
+  };
 
+  const handleSearchFocus = () => {
+    setIsSearchActive(true);
+  };
+
+  const handleSearchBlur = () => {
+    if (!searchQuery) {
+      setIsSearchActive(false);
+    }
+  };
 
   return (
     <nav className={`navigation ${isScrolled ? "scrolled" : ""}`}>
