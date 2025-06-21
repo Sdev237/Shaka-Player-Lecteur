@@ -128,52 +128,7 @@ const HomePage = () => {
     });
   }, [currentBannerIndex]);
 
-  useEffect(() => {
-    // Organiser le contenu en catégories
-    setCategories([
-      {
-        title: "Contenu en Direct",
-        items: PLAYLIST.filter((item) => item.live),
-      },
-      {
-        title: "Films Populaires",
-        items: PLAYLIST.filter((item) => !item.live),
-      },
-      {
-        title: "Films d'Animation",
-        items: PLAYLIST.filter(
-          (item) =>
-            !item.live &&
-            (item.titre.includes("Bunny") || item.titre.includes("Sintel"))
-        ),
-      },
-      {
-        title: "Bandes-annonces",
-        items: PLAYLIST.filter(
-          (item) => !item.live && item.titre.includes("Captain")
-        ),
-      },
-    ]);
-  }, []);
-
-  const handleSearch = (query) => {
-    if (!query.trim()) {
-      setSearchResults(null);
-      return;
-    }
-
-    const results = PLAYLIST.filter(
-      (item) =>
-        item.titre.toLowerCase().includes(query.toLowerCase()) ||
-        item.sousTitre.toLowerCase().includes(query.toLowerCase())
-    );
-
-    setSearchResults({
-      title: "Résultats de recherche",
-      items: results,
-    });
-  };
-
+ 
   const handlePlay = (video) => {
     setCurrentVideo(video);
     setIsPlaying(true);
