@@ -4,38 +4,7 @@ import VideoPlayer from "./VideoPlayer";
 import Navigation from "./Navigation";
 
 const PLAYLIST = [
-  {
-    titre: "Live Test (DASH-IF)",
-    sousTitre: "Flux en direct de test DASH-IF",
-    url: "https://livesim.dashif.org/livesim/testpic_2s/Manifest.mpd",
-    live: true,
-    imageUrl:
-      "https://storage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg",
-  },
-  {
-    titre: "Captain Luck (Angel One)",
-    sousTitre: "Bande-annonce",
-    url: "https://storage.googleapis.com/shaka-demo-assets/angel-one/dash.mpd",
-    live: false,
-    imageUrl:
-      "https://storage.googleapis.com/gtv-videos-bucket/sample/images/TearsOfSteel.jpg",
-  },
-  {
-    titre: "Big Buck Bunny",
-    sousTitre: "Démonstration DASH",
-    url: "https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd",
-    live: false,
-    imageUrl:
-      "https://storage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg",
-  },
-  {
-    titre: "Sintel",
-    sousTitre: "Film de démo DASH",
-    url: "https://storage.googleapis.com/shaka-demo-assets/sintel/dash.mpd",
-    live: false,
-    imageUrl:
-    "https://storage.googleapis.com/gtv-videos-bucket/sample/images/Sintel.jpg",
-  },
+  
 
   {
     titre: "Envivio Live",
