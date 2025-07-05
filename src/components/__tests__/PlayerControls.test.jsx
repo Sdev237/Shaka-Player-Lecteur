@@ -3,7 +3,25 @@ import { render, fireEvent } from "@testing-library/react";
 import PlayerControls from "../PlayerControls";
 
 describe("PlayerControls Component", () => {
-  
+  const defaultProps = {
+    avancer: jest.fn(),
+    reculer: jest.fn(),
+    handleGoLiveOrVod: jest.fn(),
+    isCurrentlyLive: false,
+    selectedQuality: "auto",
+    handleQualityChange: jest.fn(),
+    qualities: [
+      { id: "1", height: 1080 },
+      { id: "2", height: 720 },
+    ],
+    selectedAudio: "auto",
+    handleAudioChange: jest.fn(),
+    audioTracks: [{ language: "fr" }, { language: "en" }],
+    selectedText: "off",
+    handleTextChange: jest.fn(),
+    textTracks: [{ language: "fr" }, { language: "en" }],
+    handleOpenPlaylist: jest.fn(),
+  };
 
   test("renders all controls", () => {
     const { getByText, getByRole } = render(
