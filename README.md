@@ -2,6 +2,23 @@
 
 Ce projet a été créé avec [Create React App](https://github.com/facebook/create-react-app).
 
+## Push Git
+
+Si la console affiche **« No configured push destination »** ou **« Aucune destination de push configurée »** :
+
+1. Créez un dépôt sur GitHub (ou GitLab, etc.) et récupérez son URL.
+2. Dans le terminal (PowerShell), exécutez **une commande à la fois** :
+   ```powershell
+   git remote add origin https://github.com/VOTRE_UTILISATEUR/VOTRE_REPO.git
+   git push -u origin master
+   ```
+   Remplacez l’URL par celle de votre dépôt. Si votre branche s’appelle `main` :
+   ```powershell
+   git push -u origin main
+   ```
+
+**Sous PowerShell**, n’utilisez pas `&&` entre les commandes ; exécutez-les l’une après l’autre, ou utilisez `;` à la place de `&&`.
+
 ## Scripts disponibles
 
 Dans le répertoire du projet, vous pouvez exécuter :

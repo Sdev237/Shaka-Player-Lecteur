@@ -53,7 +53,18 @@ function VideoPlayer() {
             });
           });
 
-        
+          // Configuration de base simplifiée
+          const config = {
+            streaming: {
+              bufferingGoal: isLive ? 10 : 30,
+              rebufferingGoal: isLive ? 5 : 15,
+              bufferBehind: isLive ? 10 : 30,
+            },
+            abr: {
+              enabled: true,
+              defaultBandwidthEstimate: 500000,
+            },
+          };
 
           // Configuration spécifique pour le live
           if (isLive) {
@@ -133,11 +144,11 @@ function VideoPlayer() {
             <span>{stats.droppedFrames}</span>
           </div>
           <div className="flex items-center space-x-2">
-            <span className="text-green-400">Tampon :</span>
+            <span className="text-green-400">Buffer:</span>
             <span>{stats.buffered ? stats.buffered.toFixed(1) : "0.0"}s</span>
           </div>
           <div className="flex items-center space-x-2">
-            <span className="text-yellow-400">Mode :</span>
+            <span className="text-yellow-400">Mode:</span>
             <span
               className={`px-2 py-0.5 rounded text-xs font-semibold ${
                 isLive ? "bg-red-600" : "bg-blue-600"
