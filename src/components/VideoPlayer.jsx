@@ -54,7 +54,18 @@ function VideoPlayer() {
           });
 
           // Configuration de base simplifiée
-    
+          const config = {
+            streaming: {
+              bufferingGoal: isLive ? 10 : 30,
+              rebufferingGoal: isLive ? 5 : 15,
+              bufferBehind: isLive ? 10 : 30,
+            },
+            abr: {
+              enabled: true,
+              defaultBandwidthEstimate: 500000,
+            },
+          };
+
           // Configuration spécifique pour le live
           if (isLive) {
             config.streaming.liveSync = {
