@@ -1,5 +1,5 @@
 export function onErrorEvent(event) {
-  console.error("Shaka error event:", event);
+  console.error("Événement d'erreur Shaka :", event);
 
   if (event && event.detail && event.detail.severity === "CRITICAL") {
     alert(

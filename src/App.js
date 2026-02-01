@@ -7,7 +7,7 @@ function App() {
     <main className="min-h-screen bg-gray-900 text-white p-4">
       <div className="max-w-6xl mx-auto">
         <header className="mb-8">
-          <h1 className="text-4xl font-bold mb-2">Radio Stream Player</h1>
+          <h1 className="text-4xl font-bold mb-2">Lecteur de flux vidéo</h1>
           <p className="text-gray-400">
             Lecteur vidéo moderne avec support DRM, DASH/HLS, et streaming en
             direct

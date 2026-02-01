@@ -33,9 +33,9 @@ const QualitySelector = ({ player, onQualityChange }) => {
   };
 
   const getQualityLabel = (quality) => {
-    if (quality === "auto") return "Auto";
+    if (quality === "auto") return "Automatique";
     const option = qualities.find((q) => q.id === parseInt(quality));
-    if (!option) return "Auto";
+    if (!option) return "Automatique";
     return `${option.height}p (${Math.round(option.bandwidth / 1000)}kbps)`;
   };
 
@@ -71,7 +71,7 @@ const QualitySelector = ({ player, onQualityChange }) => {
               currentQuality === "auto" ? "text-blue-400" : "text-white"
             }`}
           >
-            Auto
+            Automatique
           </button>
           {qualities.map((quality) => (
             <button

@@ -53,18 +53,7 @@ function VideoPlayer() {
             });
           });
 
-          // Configuration de base simplifiée
-          const config = {
-            streaming: {
-              bufferingGoal: isLive ? 10 : 30,
-              rebufferingGoal: isLive ? 5 : 15,
-              bufferBehind: isLive ? 10 : 30,
-            },
-            abr: {
-              enabled: true,
-              defaultBandwidthEstimate: 500000,
-            },
-          };
+        
 
           // Configuration spécifique pour le live
           if (isLive) {
@@ -136,19 +125,19 @@ function VideoPlayer() {
         {/* Overlay des statistiques */}
         <div className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-black/75 backdrop-blur-sm text-white p-2 sm:p-3 rounded-lg text-xs sm:text-sm font-mono space-y-1 shadow-lg">
           <div className="flex items-center space-x-2">
-            <span className="text-blue-400">Bitrate:</span>
+            <span className="text-blue-400">Débit :</span>
             <span>{Math.round(stats.bandwidth / 1000)}kbps</span>
           </div>
           <div className="flex items-center space-x-2">
-            <span className="text-red-400">Frames drop:</span>
+            <span className="text-red-400">Images perdues :</span>
             <span>{stats.droppedFrames}</span>
           </div>
           <div className="flex items-center space-x-2">
-            <span className="text-green-400">Buffer:</span>
+            <span className="text-green-400">Tampon :</span>
             <span>{stats.buffered ? stats.buffered.toFixed(1) : "0.0"}s</span>
           </div>
           <div className="flex items-center space-x-2">
-            <span className="text-yellow-400">Mode:</span>
+            <span className="text-yellow-400">Mode :</span>
             <span
               className={`px-2 py-0.5 rounded text-xs font-semibold ${
                 isLive ? "bg-red-600" : "bg-blue-600"

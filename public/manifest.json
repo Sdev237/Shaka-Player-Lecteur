@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Lecteur vidéo",
+  "name": "Lecteur de flux vidéo - Shaka Player",
   "icons": [
     {
       "src": "favicon.ico",
