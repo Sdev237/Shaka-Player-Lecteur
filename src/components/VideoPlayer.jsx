@@ -54,18 +54,7 @@ function VideoPlayer() {
           });
 
           // Configuration de base simplifiée
-          const config = {
-            streaming: {
-              bufferingGoal: isLive ? 10 : 30,
-              rebufferingGoal: isLive ? 5 : 15,
-              bufferBehind: isLive ? 10 : 30,
-            },
-            abr: {
-              enabled: true,
-              defaultBandwidthEstimate: 500000,
-            },
-          };
-
+    
           // Configuration spécifique pour le live
           if (isLive) {
             config.streaming.liveSync = {
@@ -136,11 +125,11 @@ function VideoPlayer() {
         {/* Overlay des statistiques */}
         <div className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-black/75 backdrop-blur-sm text-white p-2 sm:p-3 rounded-lg text-xs sm:text-sm font-mono space-y-1 shadow-lg">
           <div className="flex items-center space-x-2">
-            <span className="text-blue-400">Débit :</span>
+            <span className="text-blue-400">Bitrate:</span>
             <span>{Math.round(stats.bandwidth / 1000)}kbps</span>
           </div>
           <div className="flex items-center space-x-2">
-            <span className="text-red-400">Images perdues :</span>
+            <span className="text-red-400">Frames drop:</span>
             <span>{stats.droppedFrames}</span>
           </div>
           <div className="flex items-center space-x-2">
